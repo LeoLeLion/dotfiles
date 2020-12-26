@@ -116,7 +116,7 @@ myStartupHook = do
           spawnOnce "nm-applet &"
           spawnOnce "dunst &"
           spawnOnce "/usr/bin/emacs --daemon &"
-          setWMName "LG3D"
+          setWMName "XMonad"
 
 myColorizer :: Window -> Bool -> X (String, String)
 myColorizer = colorRangeFromClassName
