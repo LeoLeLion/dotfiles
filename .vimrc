@@ -50,8 +50,8 @@ set expandtab
 set smarttab
 
 " 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors
@@ -179,11 +179,11 @@ set wildignore+=*.tmp,*.swp
 "Set Vim Language
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let $LANG='en'
-"Setting env LANG var to english
+let $LANG='fr'
+"Setting env LANG var to french
 
-set langmenu=en
-"Setting menu language to en
+set langmenu=fr
+"Setting menu language to french
 
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
