@@ -257,10 +257,5 @@ abbr tofish "sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 # bare git repo abbr for dotfiles
 abbr config "git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
-### RANDOM COLOR SCRIPT ###
-# Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
-# Or install it from the Arch User Repository: shell-color-scripts
-colorscript random
-
 ### SETTING THE STARSHIP PROMPT ###
 starship init fish | source
