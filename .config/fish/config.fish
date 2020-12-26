@@ -257,5 +257,9 @@ abbr tofish "sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 # bare git repo abbr for dotfiles
 abbr config "git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
+# neofetch
+
+neofetch
+
 ### SETTING THE STARSHIP PROMPT ###
 starship init fish | source
