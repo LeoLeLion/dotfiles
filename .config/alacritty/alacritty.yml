@@ -109,15 +109,14 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    # family: SauceCodePro Nerd Font
+    family: SauceCodePro Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
     # family: JetBrains Mono
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
-    # family: TerminessTTF Nerd Font
-    family: SauceCodePro Nerd Font
+
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -128,7 +127,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    # family: SauceCodePro Nerd Font
+    family: SauceCodePro Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
@@ -136,7 +135,6 @@ font:
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
-    family: SauceCodePro Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -180,7 +178,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 8.0
+  size: 11.0
 
 
   # Offset is the extra space around each character. `offset.y` can be thought of
@@ -560,26 +558,3 @@ background_opacity: 1.0
 #    A `~` operator can be used before a mode to apply the binding whenever
 #    the mode is *not* active, e.g. `~Alt`.
 #
-# Bindings are always filled by default, but will be replaced when a new
-# binding with the same triggers is defined. To unset a default binding, it can
-# be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
-# a no-op if you do not wish to receive input characters for that binding.
-key_bindings:
-    # (Windows, Linux, and BSD only)
-  - { key: V,        mods: Control|Shift, action: Paste            }
-  - { key: C,        mods: Control|Shift, action: Copy             }
-  - { key: Insert,   mods: Shift,         action: PasteSelection   }
-  - { key: Key0,     mods: Control,       action: ResetFontSize    }
-  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
-  - { key: Plus,     mods: Control,       action: IncreaseFontSize }
-  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
-  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
-
-  - { key: Paste,                    action: Paste                            }
-  - { key: Copy,                     action: Copy                             }
-  - { key: L,         mods: Control, action: ClearLogNotice                   }
-  - { key: L,         mods: Control, chars: "\x0c"                            }
-  - { key: PageUp,    mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
-  - { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
-  - { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
-  - { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
