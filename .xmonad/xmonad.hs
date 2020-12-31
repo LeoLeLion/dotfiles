@@ -615,19 +615,19 @@ myManageHook = composeAll
      -- using 'doShift ( myWorkspaces !! 7)' sends program to workspace 8!
      -- I'm doing it this way because otherwise I would have to write out the full
      -- name of my workspaces, and the names would very long if using clickable workspaces.
-     [ title =? "Mozilla Firefox"     --> doShift " www "
-     , className =? "mocp"     --> doShift " mus "
-     , className =? "vlc"     --> doShift " vid "
-     , className =? "MultiMC5" --> doShift " game "
-     , className =? "steam"   --> doShift " game "
+     [ title =? "Mozilla Firefox"     --> doShift " 3: \xf269 "
+     , className =? "mocp"     --> doShift " 8: \xf025 "
+     , className =? "vlc"     --> doShift " 7: \xf008 "
+     , className =? "MultiMC5" --> doShift " 9: \xf11b "
+     , className =? "steam"   --> doShift " 9: \xf11b "
      , title =? "Oracle VM VirtualBox Manager"     --> doFloat
-     , className =? "VirtualBox Manager" --> doShift " sys "
+     , className =? "VirtualBox Manager" --> doShift " 0: \xf074 "
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
      ] <+> namedScratchpadManageHook myScratchPads
 
 myLogHook :: X ()
 myLogHook = fadeInactiveLogHook fadeAmount
-    where fadeAmount = 1.0
+    where fadeAmount = 0.9
 
 myKeys = azertyKeys <+> keys defaultConfig
 
