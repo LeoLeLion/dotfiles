@@ -580,7 +580,7 @@ myTabTheme = def { fontName            = myFont
 -- Theme for showWName which prints current workspace when you change workspaces.
 myShowWNameTheme :: SWNConfig
 myShowWNameTheme = def
-    { swn_font              = "xft:Ubuntu:bold:size=60"
+    { swn_font              = "xft:Ubuntu Nerd Font:bold:size=60"
     , swn_fade              = 1.0
     , swn_bgcolor           = "#1c1f24"
     , swn_color             = "#ffffff"
@@ -601,8 +601,8 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
                                  ||| threeCol
                                  ||| threeRow
 
-myWorkspaces = [" dev ", " www ", " sys ", " doc ", " chat ", " game ", " mus ", " vid ", " etc "]
--- myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "]
+myWorkspaces = [" 1: \xf015 ", " 2: \xf120 ", " 3: \xf269 "  , " 4: \xf15b ", " 5: \xf121 " , " 6: \xf0e0 ", " 7: \xf008 ", " 8: \xf025 ", " 9: \xf11b ", " 0: \xf074 "]
+--                   home           term           web              file           code            chat           video          music          games          random
 
 xmobarEscape :: String -> String
 xmobarEscape = concatMap doubleLts
@@ -615,13 +615,13 @@ myManageHook = composeAll
      -- using 'doShift ( myWorkspaces !! 7)' sends program to workspace 8!
      -- I'm doing it this way because otherwise I would have to write out the full
      -- name of my workspaces, and the names would very long if using clickable workspaces.
-     [ title =? "Mozilla Firefox"     --> doShift "www"
-     , className =? "moc"     --> doShift "mus"
-     , className =? "vlc"     --> doShift "vid"
-     , className =? "multimc" --> doShift "game"
-     , className =? "steam"   --> doShift "game"
+     [ title =? "Mozilla Firefox"     --> doShift " www "
+     , className =? "mocp"     --> doShift " mus "
+     , className =? "vlc"     --> doShift " vid "
+     , className =? "MultiMC5" --> doShift " game "
+     , className =? "steam"   --> doShift " game "
      , title =? "Oracle VM VirtualBox Manager"     --> doFloat
-     , className =? "VirtualBox Manager" --> doShift "sys"
+     , className =? "VirtualBox Manager" --> doShift " sys "
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
      ] <+> namedScratchpadManageHook myScratchPads
 
