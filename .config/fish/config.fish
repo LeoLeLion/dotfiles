@@ -201,7 +201,7 @@ alias ll='exa -l --color=always --group-directories-first' # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 
 # pacman and yay
-abbr pacsyu 'sudo pacman -Syyu' # update only standard pkgs
+abbr pacsyu 'sudo pacman -Syyu && xmonad --recompile' # update only standard pkgs
 abbr yaysua 'yay -Sua --noconfirm' # update only AUR pkgs
 abbr yaysyu 'yay -Syu --noconfirm' # update standard pkgs and AUR pkgs
 abbr unlock 'sudo rm /var/lib/pacman/db.lck' # remove pacman lock
