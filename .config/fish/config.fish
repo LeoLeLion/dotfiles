@@ -8,15 +8,14 @@
 
 ### EXPORT ###
 set -U fish_user_paths $fish_user_paths $HOME/.local/bin/
-set fish_greeting                      # Supresses fish's intro message
-set TERM "xterm-256color"              # Sets the terminal type
-set EDITOR "emacsclient -t -a ''"      # $EDITOR use Emacs in terminal
-set VISUAL "emacsclient -c -a emacs"   # $VISUAL use Emacs in GUI mode
+set fish_greeting # Supresses fish's intro message
+set TERM "xterm-256color" # Sets the terminal type
+set EDITOR "emacsclient -t -a ''" # $EDITOR use Emacs in terminal
+set VISUAL "emacsclient -c -a emacs" # $VISUAL use Emacs in GUI mode
 
 ### SET EITHER DEFAULT EMACS MODE OR VI MODE ###
 function fish_user_key_bindings
-  fish_default_key_bindings
-  # fish_vi_key_bindings
+    fish_default_key_bindings
 end
 ### END OF VI MODE ###
 
@@ -86,7 +85,7 @@ end
 # Spark functions
 function letters
     cat $argv | awk -vFS='' '{for(i=1;i<=NF;i++){ if($i~/[a-zA-Z]/) { w[tolower($i)]++} } }END{for(i in w) print i,w[i]}' | sort | cut -c 3- | spark | lolcat
-    printf  '%s\n' 'abcdefghijklmnopqrstuvwxyz'  ' ' | lolcat
+    printf '%s\n' 'abcdefghijklmnopqrstuvwxyz' ' ' | lolcat
 end
 
 function commits
@@ -95,30 +94,31 @@ end
 
 # Functions needed for !! and !$
 function __history_previous_command
-  switch (commandline -t)
-  case "!"
-    commandline -t $history[1]; commandline -f repaint
-  case "*"
-    commandline -i !
-  end
+    switch (commandline -t)
+        case "!"
+            commandline -t $history[1]
+            commandline -f repaint
+        case "*"
+            commandline -i !
+    end
 end
 
 function __history_previous_command_arguments
-  switch (commandline -t)
-  case "!"
-    commandline -t ""
-    commandline -f history-token-search-backward
-  case "*"
-    commandline -i '$'
-  end
+    switch (commandline -t)
+        case "!"
+            commandline -t ""
+            commandline -f history-token-search-backward
+        case "*"
+            commandline -i '$'
+    end
 end
 # The bindings for !! and !$
-if [ $fish_key_bindings = fish_vi_key_bindings ];
-  bind -Minsert ! __history_previous_command
-  bind -Minsert '$' __history_previous_command_arguments
+if [ $fish_key_bindings = fish_vi_key_bindings ]
+    bind -Minsert ! __history_previous_command
+    bind -Minsert '$' __history_previous_command_arguments
 else
-  bind ! __history_previous_command
-  bind '$' __history_previous_command_arguments
+    bind ! __history_previous_command
+    bind '$' __history_previous_command_arguments
 end
 
 # Function for creating a backup file
@@ -134,8 +134,8 @@ end
 function copy
     set count (count $argv | tr -d \n)
     if test "$count" = 2; and test -d "$argv[1]"
-	set from (echo $argv[1] | trim-right /)
-	set to (echo $argv[2])
+        set from (echo $argv[1] | trim-right /)
+        set to (echo $argv[2])
         command cp -r $from $to
     else
         command cp $argv
@@ -176,7 +176,7 @@ end
 
 ### ALIASES and ABBR###
 # spark aliases
-abbr clear 'clear; echo; echo; seq 1 (tput cols) | sort -R | spark | lolcat; echo; echo'
+alias clear 'clear; echo; echo; seq 1 (tput cols) | sort -R | spark | lolcat; echo; echo'
 
 # root privileges
 abbr doas "doas --"
@@ -195,17 +195,17 @@ abbr bs 'broot --sizes'
 
 # Changing "ls" to "exa"
 alias ls='exa  --color=always --group-directories-first'
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
+alias la='exa -a --color=always --group-directories-first' # all files and dirs
 alias lA='exa -la --color=always --group-directories-first'
-alias ll='exa -l --color=always --group-directories-first'  # long format
+alias ll='exa -l --color=always --group-directories-first' # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 
 # pacman and yay
-abbr pacsyu 'sudo pacman -Syyu'                 # update only standard pkgs
-abbr yaysua 'yay -Sua --noconfirm'              # update only AUR pkgs
-abbr yaysyu 'yay -Syu --noconfirm'              # update standard pkgs and AUR pkgs
-abbr unlock 'sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
-abbr cleanup 'sudo pacman -Rns (pacman -Qtdq)'  # remove orphaned packages
+abbr pacsyu 'sudo pacman -Syyu' # update only standard pkgs
+abbr yaysua 'yay -Sua --noconfirm' # update only AUR pkgs
+abbr yaysyu 'yay -Syu --noconfirm' # update standard pkgs and AUR pkgs
+abbr unlock 'sudo rm /var/lib/pacman/db.lck' # remove pacman lock
+abbr cleanup 'sudo pacman -Rns (pacman -Qtdq)' # remove orphaned packages
 
 # get fastest mirrors
 abbr mirror "sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -224,8 +224,8 @@ alias mv='mv -v'
 alias rm='rm -v'
 alias mkdir='mkdir -v'
 # adding flags
-abbr df 'df -h'                          # human-readable sizes
-abbr free 'free -m'                      # show sizes in MB
+abbr df 'df -h' # human-readable sizes
+abbr free 'free -m' # show sizes in MB
 abbr lynx 'lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss -vikeys'
 abbr vifm './.config/vifm/scripts/vifmrun'
 
@@ -259,7 +259,7 @@ abbr config "git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 # neofetch
 
-neofetch
+pfetch
 
 ### SETTING THE STARSHIP PROMPT ###
 starship init fish | source
