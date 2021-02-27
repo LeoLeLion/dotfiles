@@ -88,7 +88,7 @@ myTerminal :: String
 myTerminal = "alacritty"   -- Sets default terminal
 
 myBrowser :: String
-myBrowser = "firefox "               -- Sets firefox as browser for tree select
+myBrowser = "qutebrowser"               -- Sets firefox as browser for tree select
 
 myEditor :: String
 myEditor = "emacsclient -c -a emacs "  -- Sets emacs as editor for tree select
@@ -642,7 +642,7 @@ newKeys =
 
     -- Useful programs to have a keybinding for launch
         , ("M-<Return>", spawn (myTerminal ++ " -e fish"))
-        , ("M-b", spawn (myBrowser ++ " www.google.com"))
+        , ("M-b", spawn (myBrowser ++ " https://duckduckgo.com"))
         , ("M-M1-h", spawn (myTerminal ++ " -e htop"))
 
     -- Kill windows
