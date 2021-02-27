@@ -739,7 +739,9 @@ newKeys =
         , ("<XF86Mail>", runOrRaise "geary" (resource =? "thunderbird"))
         , ("<XF86Calculator>", runOrRaise "gcalctool" (resource =? "gcalctool"))
         , ("<XF86Eject>", spawn "toggleeject")
-        , ("<Print>", spawn "scrotd 0")
+        , ("<Print>", spawn "fish -c screenToClip")
+        , ("S-<Print>", spawn "fish -c selectionToClip")
+        , ("C-<Print>", spawn "fish -c windowToClip")
         ]
     -- Appending search engine prompts to keybindings list.
     -- Look at "search engines" section of this config for values for "k".
