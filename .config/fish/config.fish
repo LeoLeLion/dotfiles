@@ -175,9 +175,6 @@ end
 
 
 ### ALIASES and ABBR###
-# spark aliases
-alias clear 'clear; echo; echo; seq 1 (tput cols) | sort -R | spark | lolcat; echo; echo'
-
 # root privileges
 abbr doas "doas --"
 
@@ -228,7 +225,7 @@ abbr df 'df -h' # human-readable sizes
 abbr free 'free -m' # show sizes in MB
 abbr lynx 'lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss -vikeys'
 abbr vifm './.config/vifm/scripts/vifmrun'
-
+abbr funced 'funced -s'
 ## get top process eating memory
 abbr psmem 'ps auxf | sort -nr -k 4'
 abbr psmem10 'ps auxf | sort -nr -k 4 | head -10'

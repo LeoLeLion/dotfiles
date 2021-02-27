@@ -91,8 +91,7 @@ myBrowser :: String
 myBrowser = "firefox "               -- Sets firefox as browser for tree select
 
 myEditor :: String
--- myEditor = "emacsclient -c -a emacs "  -- Sets emacs as editor for tree select
-myEditor = myTerminal ++ " -e vim "    -- Sets vim as editor for tree select
+myEditor = "emacsclient -c -a emacs "  -- Sets emacs as editor for tree select
 
 myBorderWidth :: Dimension
 myBorderWidth = 3          -- Sets border width for windows
